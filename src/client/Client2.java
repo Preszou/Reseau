@@ -47,7 +47,7 @@ public class Client2 {
                     System.out.println("Tu as perdu dommage");
                     return;
                 } else if (mess.equals("j1")) {
-                    System.out.println("Vous ï¿½tes le premier joueur");
+                    System.out.println("Vous etes le premier joueur");
 
                 } else {
                     System.out.println("Vous ezele premier joueur");

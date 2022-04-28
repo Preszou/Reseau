@@ -1,7 +1,7 @@
 package serveur;
 
-import client.Player;
-import jeu.Grille;
+import client.*;
+import jeu.*;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
