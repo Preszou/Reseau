@@ -11,7 +11,7 @@ Le principe de la cryptographie est de définir une transformation des symboles 
 
 Pour cela, on utilise l'algorithme asymétrique, autrement dit, les clés publiques et privées.
 
-### 1.2 - Architecture de l'application application
+### 1.2 - Architecture de l'application 
 
 *Schéma de l'architecture de l'application :*
 ![](https://cdn.discordapp.com/attachments/920615644876120065/970275702911934484/Schema_Architecture.drawio.png)
