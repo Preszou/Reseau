@@ -17,7 +17,7 @@ Pour cela, on utilise l'algorithme asymétrique, autrement dit, les clés publiq
 ![](https://cdn.discordapp.com/attachments/920615644876120065/970275702911934484/Schema_Architecture.drawio.png)
 
 ## 2 - Résultat
-Étant donné que la première version de notre jeu du morpion faisait correspondre les clients et le serveur à l'aide de l'application ***telnet***, nous avons dû repenser toute l'application est organiser le projet de la sorte à avoir physiquement un côté ***client*** et un côté ***serveur***.
+Étant donné que la première version de notre jeu du morpion faisait correspondre les clients et le serveur à l'aide de l'application ***telnet***, nous avons dû repenser toute l'application à l'aide de notre professeur est organiser le projet de la sorte à avoir physiquement un côté ***client*** et un côté ***serveur***.
 
 
 Afin que l'utilisateur puisse comprendre pourquoi l'application ne fonctionne pas dans sa globalité, il faut savoir que nous ne sommes pas parvenus à terminer l'application.
