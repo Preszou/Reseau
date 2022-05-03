@@ -1,17 +1,12 @@
-/*
- * Classe Joueur.
- * Cette classe nous permet dinstancier dans la classe Dialogue
- * 2 joueurs. Ceci prennent comme paramètre une socket, un attribut boolean commencer,
- * qui nous permet de définir un ordre de jeu et enfin un signe qui correspond au signe
- * du joueur qui va être dessiner sur la grille.
- */
-
 package client;
 
 import java.net.*;
 import java.io.*;
 
-public class Player // S'occupe de recevoir le message et de le renvoyer
+/**
+ * La classe player s'occupe de recevoir le message et de le renvoyer
+ */
+public class Player
 {
     private Socket sockcli;
     private InputStream in;
@@ -19,6 +14,14 @@ public class Player // S'occupe de recevoir le message et de le renvoyer
     private boolean commencer;
     private String signe;
 
+    /**
+     * Constructeur Player()
+     * @param sockcli
+     * @param commencer
+     * @param signe
+     * @param pIn
+     * @param pOut
+     */
     public Player(Socket sockcli, boolean commencer, String signe, InputStream pIn, OutputStream pOut)
     {
         this.sockcli = sockcli;
@@ -28,27 +31,47 @@ public class Player // S'occupe de recevoir le message et de le renvoyer
         this.out = pOut;
     }
 
+    /**
+     * getIn()
+     * @return InputStream
+     */
     public InputStream getIn()
     {
         return this.in;
     }
 
+    /**
+     * getOut()
+     * @return OutputStream
+     */
     public OutputStream getOut()
     {
         return this.out;
     }
 
 
+    /**
+     * getCommencer()
+     * @return boolean
+     */
     public boolean getCommencer()
     {
         return this.commencer;
     }
 
+    /**
+     * setCommencer()
+     * @param tonTour
+     */
     public void setCommencer(boolean tonTour)
     {
         this.commencer = tonTour;
     }
 
+    /**
+     * getSigne()
+     * @return String
+     */
     public String getSigne()
     {
         return this.signe;

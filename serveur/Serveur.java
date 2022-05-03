@@ -5,20 +5,16 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * This class is just the server of our application.
- *
- */
 public class Serveur {
 
     /**
-     * This is just an excecutable method
+     * classe main() qui lance le programme
      * @param args
      * @throws IOException
      * @throws NoSuchAlgorithmException
      */
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
-        // DÃ©claration socket serveur
+        // Déclaration socket serveur
         ServerSocket sockServ = null;
 
         // Lancement du serveur

@@ -6,23 +6,21 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
-import java.security.spec.X509EncodedKeySpec;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * Classe du 2ème Client
+ */
 public class Client2 {
     public static void main(String[] args) throws Exception {
-        // DÃ©claration du socket client
-        Socket sockCli;
+        Socket sockCli; /* Déclaration du socket client */
         DataInputStream in = null;
         DataOutputStream out;
-        KeyPairGenerator kg = KeyPairGenerator.getInstance("RSA");
-        kg.initialize(1024);
-        KeyPair kp = kg.generateKeyPair();
-        PrivateKey privatek = kp.getPrivate();
-        PublicKey publick = kp.getPublic();
+        KeyPairGenerator kg = KeyPairGenerator.getInstance("RSA"); //Creating KeyPair generator object
+        kg.initialize(1024); //Initializing the KeyPairGenerator
+        KeyPair kp = kg.generateKeyPair(); //Generate the pair of keys
+        PrivateKey privatek = kp.getPrivate(); //Getting the private key from the key pair
+        PublicKey publick = kp.getPublic(); //Getting the public key from the key pair
         PublicKey pkServ = null;
         PublicKey serveurKey;
         String signe ="";
@@ -31,36 +29,25 @@ public class Client2 {
         InetAddress addr = InetAddress.getByName("localhost");
         sockCli = new Socket(addr, 1236);
         boolean peutJouer = false;
-        in = new DataInputStream(sockCli.getInputStream());
-        out = new DataOutputStream(sockCli.getOutputStream());
-
-
+        in = new DataInputStream(sockCli.getInputStream()); // utilisé pour lire les données
+        out = new DataOutputStream(sockCli.getOutputStream()); // utilisé pour écrire les données
 
         while(true)
         {
-
-            byte[] mess = new byte[128];
+            byte[] mess = new byte[128]; // Tableau de Byte
             in.read(mess);
             String rep = new String(mess, java.nio.charset.StandardCharsets.UTF_8);
-            System.out.println("ouai");
+
+            /* Défini si c'est au tour de jouer du joueur ou non */
             if(signe.equals("")) {
                 if (rep.contains("x") || rep.contains("o")) {
                     signe = rep;
-                    if(rep.contains("x"))
-                    {
-                        System.out.println("test3");
-                        peutJouer = true;
-                    }
-                    else
-                    {
-                        System.out.println("test4");
-                        peutJouer = false;
-                    }
+                    if(rep.contains("x"))peutJouer = true;
+                    else peutJouer = false;
                 }
             }
             else
             {
-
                 if(peutJouer)
                 {
                     System.out.println("C'est votre tour");
@@ -71,23 +58,10 @@ public class Client2 {
                 }
 
                 System.out.println(rep);
-                if(peutJouer)
-                {
-                    System.out.println("test");
-                    peutJouer = false;
-                }
-                else
-                {
-                    System.out.println("test2");
-                    peutJouer = true;
-                }
+                if(peutJouer) peutJouer = false;
+                else peutJouer = true;
             }
-
-
-
-
         }
-
-
     }
 }
+
